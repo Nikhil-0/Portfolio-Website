@@ -1,0 +1,86 @@
+.section-heading {
+  text-align: center;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: #e0e0e0;
+  border-bottom: 2px solid #0cb9e9;
+  padding-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.projects-and-experience-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Certifications Grid */
+.certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 3rem;
+}
+
+.certification-entry {
+  background-color: #22272d;
+  border: 1px solid #555;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.certification-image {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.certification-title {
+  color: #e0e0e0;
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Projects List */
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 900px;
+}
+
+.project-entry {
+  background-color: #22272d;
+  border: 1px solid #555;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.project-title {
+  color: #0cb9e9;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: 1.5rem;
+}
+
+.project-description {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.project-tech {
+  font-size: 0.9rem;
+  color: #a0a0a0;
+  font-style: italic;
+}

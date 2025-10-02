@@ -1,0 +1,10 @@
+.social-media-links a {
+  margin-left: 1rem;
+  font-size: 1.5rem;
+  color: #e0e0e0;
+  transition: color 0.2s ease-in-out;
+}
+
+.social-media-links a:hover {
+  color: #ffffff;
+}

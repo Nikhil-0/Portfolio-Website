@@ -1,0 +1,34 @@
+.education-section h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.education-entry {
+  display: flex;
+  align-items: center;
+  background-color: #22272d;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  border: 1px solid #555;
+}
+
+.school-logo {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-right: 1.5rem;
+  flex-shrink: 0;
+}
+
+.education-details h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: #0cb9e9;
+}
+
+.education-details p {
+  margin: 0;
+  color: #e0e0e0;
+}

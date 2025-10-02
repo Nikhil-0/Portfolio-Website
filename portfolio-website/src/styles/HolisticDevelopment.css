@@ -1,0 +1,63 @@
+.life-stage-heading {
+  text-align: center;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: #e0e0e0;
+  border-bottom: 2px solid #0cb9e9;
+  padding-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.holistic-development-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.activity-entry {
+  display: flex;
+  gap: 1.5rem;
+  background-color: #22272d;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  border: 1px solid #555;
+  width: 100%;
+  max-width: 900px;
+}
+
+.activity-logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  flex-shrink: 0;
+  align-self: flex-start;
+}
+
+.activity-content h3 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  color: #0cb9e9;
+  font-size: 1.5rem;
+}
+
+.activity-content p {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.activity-images {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.activity-image {
+  height: 150px;
+  width: auto;
+  border-radius: 6px;
+  object-fit: cover;
+  border: 2px solid #555;
+}

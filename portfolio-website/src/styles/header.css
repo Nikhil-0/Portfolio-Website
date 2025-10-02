@@ -1,0 +1,24 @@
+.site-header {
+  width: 100%;
+  padding: 1rem 2rem;
+  background-color: #161616;
+  border-bottom: 1px solid #555;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+
+.header-content {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-title a {
+  text-decoration: none;
+  color: #e0e0e0;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
