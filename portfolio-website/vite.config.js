@@ -6,5 +6,6 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     dedupe: ['react', 'react-dom'],
+    base: process.env.VITE_BASE_PATH || '/Portfolio-Website',
   },
 })
