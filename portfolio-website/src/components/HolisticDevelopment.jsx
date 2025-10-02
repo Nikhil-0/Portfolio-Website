@@ -1,5 +1,5 @@
 import React from 'react';
-import NCC_Logo from '../assets/ncc_logo.png';
+import NCC_Logo from '../assets/NCC_logo.png';
 import NCC_Image_1 from '../assets/NCC_Image.jpg';
 import NCC_Image_2 from '../assets/NCC_Image2.jpg';
 import NCC_Image3 from '../assets/NCC_Image3.jpg';
