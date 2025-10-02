@@ -7,7 +7,7 @@ import TJC from '../assets/TJC_Logo.avif';
 import ODAC_Image from '../assets/ODAC_Image.jpg';
 import ODAC_Image2 from '../assets/ODAC_Image2.jpg';
 import ODAC_Image3 from '../assets/ODAC_Image3.jpg';
-import CW_Logo from '../assets/CommonWealthLogo.png';
+import CW_Logo from '../assets/CommonwealthLogo.png';
 import CW_Certificate from '../assets/CommonWealthCertificate.jpg';
 import HWN from '../assets/HWN_Logo.webp';
 import RSN from '../assets/Republic_of_Singapore_Navy_Crest.svg';
