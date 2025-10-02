@@ -18,7 +18,7 @@ import Navy_Image4 from '../assets/Navy_Image4.jpg';
 import Choir_Logo from '../assets/Choir_Logo.png';
 import Choir_Image1 from '../assets/Choir_Comp.jpg';
 import Choir_Image2 from '../assets/Choir_Comp2.jpg';
-import Choir_Image3 from '../assets/Choir_Comp3.jpg';
+import Choir_Image3 from '../assets/Choir_Comp3.JPG';
 import '../styles/HolisticDevelopment.css';
 
 export default function HolisticDevelopment() {
