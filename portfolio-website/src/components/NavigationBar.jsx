@@ -10,6 +10,7 @@ export default function Navbar() {
         <li><Link to="/projects">Projects & Experience</Link></li>
         <li><Link to="/education">Education</Link></li>
         <li><Link to="/holistic-development">Holistic Development</Link></li>
+        <li><Link to="/blog">Blog</Link></li>
       </ul>
     </nav>
   );

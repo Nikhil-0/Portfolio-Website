@@ -1,5 +1,5 @@
 import React from 'react';
-import NCC_Logo from '../assets/ncc_logo.png';
+import NCC_Logo from '../assets/NCC_Logo.png';
 import NCC_Image_1 from '../assets/NCC_Image.jpg';
 import NCC_Image_2 from '../assets/NCC_Image2.jpg';
 import NCC_Image3 from '../assets/NCC_Image3.jpg';
@@ -7,7 +7,7 @@ import TJC from '../assets/TJC_Logo.avif';
 import ODAC_Image from '../assets/ODAC_Image.jpg';
 import ODAC_Image2 from '../assets/ODAC_Image2.jpg';
 import ODAC_Image3 from '../assets/ODAC_Image3.jpg';
-import CW_Logo from '../assets/CommonWealthLogo.png';
+import CW_Logo from '../assets/CommonwealthLogo.png';
 import CW_Certificate from '../assets/CommonWealthCertificate.jpg';
 import HWN from '../assets/HWN_Logo.webp';
 import RSN from '../assets/Republic_of_Singapore_Navy_Crest.svg';
@@ -18,7 +18,7 @@ import Navy_Image4 from '../assets/Navy_Image4.jpg';
 import Choir_Logo from '../assets/Choir_Logo.png';
 import Choir_Image1 from '../assets/Choir_Comp.jpg';
 import Choir_Image2 from '../assets/Choir_Comp2.jpg';
-import Choir_Image3 from '../assets/Choir_Comp3.jpg';
+import Choir_Image3 from '../assets/Choir_Comp3.JPG';
 import '../styles/HolisticDevelopment.css';
 
 export default function HolisticDevelopment() {
