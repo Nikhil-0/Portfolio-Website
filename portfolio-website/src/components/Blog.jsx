@@ -23,11 +23,11 @@ export default function Blog() {
           </p>
           <h4 className="blog-paragraph-header">Challenges & Reality Check</h4>
           <p>
-            However, the journey was far from straightforward. Early backtests showed promising results—a Sharpe ratio of 1.45 and low drawdowns—but deeper analysis revealed the pitfalls. Market conditions in 2023 were unusually favorable, and many strategies that performed well in bull markets struggled in sideways or bear regimes. Overfitting was a constant risk, and even with walk-forward validation, it was easy to create strategies that worked in-sample but failed out-of-sample. Transaction costs and slippage, when properly modeled, reduced returns significantly and exposed the fragility of many approaches.
+            However, the journey was far from straightforward. Early backtests showed promising results: a Sharpe ratio of 1.45 and low drawdowns, but deeper analysis revealed the pitfalls. Market conditions in 2023 were unusually favorable, and many strategies that performed well in bull markets struggled in sideways or bear regimes. Overfitting was a constant risk, and even with walk-forward validation, it was easy to create strategies that worked in-sample but failed out-of-sample. Transaction costs and slippage, when properly modeled, reduced returns significantly and exposed the fragility of many approaches.
           </p>
           <h4 className="blog-paragraph-header">Lessons Learned</h4>
           <p>
-            Through this project, I learned several key lessons. Simplicity and robustness matter more than curve-fitting; ignoring transaction costs is the fastest way to fool yourself; and strategies must be tested across multiple market regimes to be considered reliable. Machine learning, while powerful, is not a magic bullet—domain knowledge and risk management are just as important.
+            Through this project, I learned several key lessons. Simplicity and robustness matter more than curve-fitting; ignoring transaction costs is the fastest way to fool yourself; and strategies must be tested across multiple market regimes to be considered reliable. Machine learning, while powerful, is not a magic bullet. Domain knowledge and risk management are just as important.
           </p>
           <h4 className="blog-paragraph-header">Looking Forward</h4>
           <p>
