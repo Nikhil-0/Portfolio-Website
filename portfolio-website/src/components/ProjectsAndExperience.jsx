@@ -48,7 +48,7 @@ export default function ProjectsAndExperience() {
         <div className="project-entry">
           <h3 className="project-title">Portfolio Website</h3>
           <p className="project-description">Created a personal portfolio website using React to showcase my skills, projects, and experiences. The website features a clean and modern design, with sections for my bio, skills, projects, and contact information.</p>
-          <p className="project-tech"><strong>Technology applied:</strong> React, JavaScript, HTML, CSS</p>
+          <p className="project-tech"><strong>Technology applied:</strong> React, JavaScript, HTML, CSS, Vite, Front-End Development, Github</p>
         </div>
         <div className="project-entry">
           <h3 className="project-title">Chat App</h3>

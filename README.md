@@ -51,7 +51,7 @@ Make sure you have Node.js and npm installed on your machine.
 
 1.  Clone the repository:
     ```sh
-    git clone https://github.com/your-username/your-repo-name.git
+    git clone https://github.com/Nikhil-0/Portfolio-Website.git
     ```
 2.  Navigate to the project directory:
     ```sh
