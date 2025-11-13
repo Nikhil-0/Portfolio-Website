@@ -1,10 +1,14 @@
 import React from 'react';
 import pythonCert from '../assets/Py_Cert.png';
+import OCI_Java from '../assets/OCI_Java_Explorer_Badge.png';
 import OCI_Foundation from '../assets/OCI_AI_Foundations.png';
 import OCI_GenerativeAI from '../assets/OCI_GenAI.png';
 import OCI_VectorSearch from '../assets/OCI_VectorSearch.png';
+import OCI_MySQL from '../assets/Oracle MySQL Explorer Badge.png';
+import OCI_MySQL_Heatwave from '../assets/Oracle MySQL Heatwave.jpg';
 import Bloomberg_Fundamentals from '../assets/Bloomberg_Finance_Fundamentals_Cert.png'
 import Bloomberg_Market from '../assets/Bloomberg_Market_Concepts_Cert.png'
+import AWS_Cloud_Essentials from '../assets/AWS Cloud Practitioner Essentials.png'
 import '../styles/ProjectsAndExperience.css';  
 
 export default function ProjectsAndExperience() {
@@ -15,6 +19,10 @@ export default function ProjectsAndExperience() {
         <div className="certification-entry">
           <img src={pythonCert} alt="Python Certification" className="certification-image" />
           <h3 className="certification-title">Python Certification</h3>
+        </div>
+        <div className="certification-entry">
+          <img src={OCI_Java} alt="Oracle Java Explorer Badge" className="certification-image" />
+          <h3 className="certification-title">Oracle Java Explorer</h3>
         </div>
         <div className="certification-entry">
           <img src={OCI_Foundation} alt="Oracle AI Foundation Certification" className="certification-image" />
@@ -35,6 +43,27 @@ export default function ProjectsAndExperience() {
         <div className="certification-entry">
           <img src={Bloomberg_Market} alt="Bloomberg Market Concepts Certification" className="certification-image" />
           <h3 className="certification-title">Bloomberg Market Concepts</h3>
+        </div>
+        <div className="certification-entry">
+          <img src={OCI_MySQL} alt="Oracle MySQL Explorer Badge" className="certification-image" />
+          <h3 className="certification-title">Oracle MySQL Explorer</h3>
+        </div>
+        <div className="certification-entry">
+          <img src={OCI_MySQL_Heatwave} alt="Oracle MySQL Heatwave Certification" className="certification-image" />
+          <h3 className="certification-title">Oracle MySQL Heatwave Implementation Associate</h3>
+        </div>
+        <div className="certification-entry">
+          <img src={AWS_Cloud_Essentials} alt="AWS Cloud Practitioner Essentials Certification" className="certification-image" />
+          <h3 className="certification-title">AWS Cloud Practitioner</h3>
+        </div>
+      </div>
+
+      <h2 className="section-heading">Experience</h2>
+      <div className="projects-list">
+        <div className="project-entry">
+          <h3 className="project-title">Google CSSIx Apprenticeship</h3>
+          <p className="project-description">Was selected for an intensive and prestigious programming apprenticeship conducted by Google, where Google developers and engineers taught me how to build web apps in Javascript, HTML, CSS, Python and the Google AppEngine, along with some other technologies mixed in such as Restful APIs. I worked with a team during the apprenticeship to build a full-fledged app hosted by the GoogleApp Engine using Python, HTML and CSS.</p>
+          <p className="project-tech"><strong>Technology applied:</strong> Web Infrastructure, Python (Programming Language), JavaScript, HTML, CSS, Google AppEngine.</p>
         </div>
       </div>
 
@@ -65,6 +94,16 @@ export default function ProjectsAndExperience() {
           <p className="project-description">A robust, modular Python trading engine designed for quantitative finance, featuring machine learning strategies, advanced risk management, and comprehensive backtesting. 
             The system supports multi-source data fetching (Yahoo Finance, CCXT), technical indicator calculation, portfolio optimization, and automated trade execution. Built for reliability and reproducibility, it includes Dockerized deployment, structured logging, and resilient error handling.</p>
           <p className="project-tech"><strong>Technology applied:</strong> Python, pandas, numpy, scikit-learn, yfinance, ccxt, Optuna, Docker, pytest</p>
+        </div>
+        <div className="project-entry">
+          <h3 className="project-title">Bin Buddy: E-waste Recycling Web App</h3>
+          <p className="project-description">Developed as a team, Bin Buddy is a full-stack Node.js application designed to help users locate e-waste recycling bins in Singapore and promote sustainable disposal practices. Our team, adhering to the Scrum project management framework, collaborated on the complete software engineering lifecycle, including requirements gathering, analysis, and design. We produced rigorous test cases throughout development to ensure quality work and produced detailed use case diagrams, class diagrams, sequence diagrams, and system architecture diagrams to guide development and ensure robust functionality. Key features include secure authentication, admin controls, password recovery, Google Maps integration, account management, query management and educational resources. The project demonstrates our ability to work collaboratively, apply best practices in software engineering, and deliver a solution with real-world impact.</p>
+          <p className="project-tech"><strong>Tech stack (Including SWE Practices):</strong> Node.js, Express.js, MongoDB, Handlebars, Google Maps API, SendGrid, Requirement elicitation/analysis, Scrum, Test-Driven Development, SDLC, UML Diagrams.</p>
+        </div>
+        <div className="project-entry">
+          <h3 className="project-title">Research Assistant Application</h3>
+          <p className="project-description">An AI-driven multi-agent research tool built for the Google Cloud Run hackathon. The application automates research tasks through a sophisticated system of specialized agents: the Research Agent gathers information from various sources, the Synthesis Agent organizes content logically, and the Evaluation Agent ensures accuracy and reliability. Built with Streamlit for an intuitive user interface and FastAPI backend, the system delivers well-formatted outputs in various styles (reports, debates, analyses) while providing real-time progress tracking. Successfully implemented agent coordination, cloud deployment with auto-scaling capabilities, and a flexible output system that adapts to different research needs.</p>
+          <p className="project-tech"><strong>Tech stack:</strong> Python, Streamlit, FastAPI, Google ADK (Agent Development Kit), Docker, Google Cloud Run, Google Cloud Build, Google Container Registry, Git/GitHub</p>
         </div>
       </div>
     </section>

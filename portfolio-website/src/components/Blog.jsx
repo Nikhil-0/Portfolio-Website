@@ -39,6 +39,39 @@ export default function Blog() {
           </p>
         </div>
       </div>
+
+      <div className="blog-entry">
+        <div className="blog-details">
+          <h3>2. My First Hackathon: Research Assistant Application — An AI-Powered Multi-Agent for Faster, Smarter Research</h3>
+          <h4 className="blog-paragraph-header">Why We Built It</h4>
+          <p>
+            We participated in the Google Cloud Run hackathon where we were to use the Google ADK to design a multi-agent workflow. As students and developers, we kept losing time to repetitive research tasks: finding relevant articles, extracting key ideas, organizing notes, and checking claims. We wanted a tool that could act like a small research team: one agent to collect information, another to organize it, and another to critique it, so that we could focus on insight rather than grunt work.
+          </p>
+          <h4 className="blog-paragraph-header">What It Does</h4>
+          <p>
+            The Research Assistant Application accepts a research query through a Streamlit interface and invokes a multi-agent pipeline. The Research Agent collects sources and raw facts, the Synthesis Agent organizes and summarizes findings, and the Evaluation Agent validates and critiques results. The system produces user-ready outputs like summaries, reports, or structured notes, tracks progress in real-time, and runs locally or in the cloud (containerized + Cloud Run).
+          </p>
+          <h4 className="blog-paragraph-header">Architecture & Technologies</h4>
+          <p>
+            The architecture is a pipeline: query → research → synthesize → evaluate → present. Each stage returns structured data to the next. We built the frontend with Streamlit for quick prototyping and an interactive UX. The backend uses ADK-powered agents orchestrated via a FastAPI-compatible interface. The entire application is containerized with Docker and deployed to Google Cloud Run via Cloud Build for serverless hosting.
+          </p>
+          <p>
+            <strong>Key technologies:</strong> Python 3.12, Streamlit, FastAPI, ADK (AI Development Kit), Docker, Google Cloud Run, Cloud Build, and Git/GitHub.
+          </p>
+          <h4 className="blog-paragraph-header">Challenges & Lessons Learned</h4>
+          <p>
+            Dependency resolution was time-consuming—pinning exact versions and testing container builds early proved essential. Agent coordination required designing clear input/output contracts (JSON schemas) to avoid brittle handoffs. We learned that local and cloud environments differ significantly; replacing localhost with 0.0.0.0 for containerized services was crucial. For long-running tasks, implementing progress tracking and partial updates improved the user experience. We also learned the importance of secret management—API keys must never be committed to Git; we used .env locally and Cloud Secret Manager in production.
+          </p>
+          <h4 className="blog-paragraph-header">What's Next</h4>
+          <p>
+            We plan to improve source verification and traceability, add integrations with academic APIs like CrossRef and Semantic Scholar, provide collaborative features for team workflows, build CI pipelines for integration tests, and enhance the production deployment to create a true web app experience.
+          </p>
+          <h4 className="blog-paragraph-header">Final Thoughts</h4>
+          <p>
+            This project sits at the intersection of AI, software engineering, and human-computer interaction. The goal was not only to automate research tasks, but to do so in a way that's transparent and useful to people. We learned a lot about engineering reliable AI pipelines and the importance of small, testable interfaces between system components. You can try the app by cloning the repo at <a href="https://github.com/Nikhil-0/Research-Assistant-Application" target="_blank" rel="noopener noreferrer" className="medium-link">GitHub</a>.
+          </p>
+        </div>
+      </div>
     </section>
   );
 }
