@@ -1,0 +1,26 @@
+/* ==========================================================================
+   Motion tokens. Three durations and two springs, defined once. Nothing in
+   the codebase should hand-tune a duration or an easing curve.
+   ========================================================================== */
+
+:root {
+  --dur-state: 180ms;      /* hover, focus, press — immediate feedback */
+  --dur-transition: 260ms; /* route changes, disclosure */
+  --dur-reveal: 400ms;     /* scroll entry, rules drawing */
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+@keyframes live-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%      { opacity: 0.55; transform: scale(0.85); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-state: 0.01ms;
+    --dur-transition: 0.01ms;
+    --dur-reveal: 0.01ms;
+  }
+}

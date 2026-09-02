@@ -1,0 +1,171 @@
+.spine__chart {
+  /* The rail column and its gap are declared once here because BOTH the year
+     axis and every track's lane must resolve to the same horizontal origin.
+     They previously did not: the axis spanned the whole chart while the bars
+     were positioned inside the grid's second column, so every bar sat shifted
+     right of the year it belonged to. Change these in one place or not at all. */
+  --rail-col: 8rem;
+  --rail-gap: var(--space-4);
+
+  position: relative;
+  border-top: 1px solid var(--rule);
+  padding-top: var(--space-5);
+}
+
+.spine__axis {
+  position: relative;
+  height: 1.2rem;
+  margin-bottom: var(--space-4);
+  /* Share the lane's coordinate space, not the chart's. */
+  margin-left: calc(var(--rail-col) + var(--rail-gap));
+}
+
+.spine__year {
+  position: absolute;
+  left: var(--at);
+  transform: translateX(-50%);
+  color: var(--color-text-muted);
+}
+
+.spine__track {
+  display: grid;
+  grid-template-columns: var(--rail-col) minmax(0, 1fr);
+  align-items: center;
+  gap: var(--rail-gap);
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.spine__lane {
+  position: relative;
+  height: 2rem;
+}
+
+.spine__now {
+  position: absolute;
+  left: var(--at);
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background-color: var(--color-live);
+  opacity: 0.7;
+}
+
+.spine__bar {
+  position: absolute;
+  left: var(--start);
+  width: var(--size);
+  top: 50%;
+  height: 10px;
+  margin-top: -5px;
+  transform-origin: left center;
+  background-color: var(--color-accent);
+  opacity: 0.75;
+  cursor: default;
+  transition: opacity var(--dur-state);
+}
+
+.spine__bar--live {
+  background-color: var(--color-live);
+}
+
+.spine__bar:hover,
+.spine__bar:focus-visible {
+  opacity: 1;
+}
+
+.spine__tip {
+  position: absolute;
+  left: 0;
+  bottom: calc(100% + 6px);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: var(--space-2) var(--space-3);
+  background-color: var(--color-surface);
+  border: 1px solid var(--rule-strong);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  color: var(--color-text);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--dur-state) var(--ease-out);
+  z-index: 2;
+}
+
+/* Right-anchor the tip for bars near the right edge of the lane (flagged by
+   CareerSpine.jsx via TIP_FLIP_START_PCT) so it grows leftward instead of
+   rightward. `size` is always clamped to `100 - start`, so a bar's right
+   edge can never exceed the lane's right edge — anchoring the tip there
+   instead of at the bar's left edge guarantees the tip's own right edge
+   stays within the lane (and therefore within the page) in both the hidden
+   and revealed states, fixing the horizontal-overflow defect at its source
+   instead of merely clipping it. Static positioning only, so it does not
+   conflict with the `.spine__tip` opacity transition above. */
+.spine__bar--tip-end .spine__tip {
+  left: auto;
+  right: 0;
+}
+
+.spine__tip-detail,
+.spine__tip-org {
+  color: var(--color-text-muted);
+}
+
+.spine__bar:hover .spine__tip,
+.spine__bar:focus-visible .spine__tip {
+  opacity: 1;
+}
+
+/* Below 768px the lane grows a fixed height per entry and bars stack, so the
+   spine stays legible instead of compressing a decade into 320px. */
+@media (max-width: 768px) {
+  .spine__axis {
+    display: none;
+  }
+
+  .spine__track {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-2);
+  }
+
+  .spine__lane {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .spine__now {
+    display: none;
+  }
+
+  .spine__bar {
+    position: relative;
+    left: auto;
+    width: 100%;
+    top: auto;
+    height: auto;
+    margin-top: 0;
+    padding: var(--space-2) var(--space-3);
+    background-color: var(--color-surface-2);
+    border-left: 3px solid var(--color-accent);
+    opacity: 1;
+  }
+
+  .spine__bar--live {
+    border-left-color: var(--color-live);
+    background-color: var(--color-surface-2);
+  }
+
+  .spine__tip {
+    position: static;
+    opacity: 1;
+    padding: 0;
+    background: none;
+    border: 0;
+    white-space: normal;
+  }
+}

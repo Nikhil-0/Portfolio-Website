@@ -1,10 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio</title>
+    <meta
+      name="description"
+      content="Nikhil Madeti — Computer Science undergraduate at NTU. Projects, experience, education and writing across software, AI and quantitative finance."
+    />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="theme-color" content="#0b0e11" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#fbfaf7" media="(prefers-color-scheme: light)" />
+
+    <!-- Open Graph / Twitter.
+         For the richest link previews, replace the relative og:image / og:url
+         below with your absolute deployed URL (e.g. https://your-domain/og.png) —
+         some crawlers (Facebook) won't resolve relative image paths. -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Nikhil Madeti" />
+    <meta property="og:title" content="Nikhil Madeti — Software, finance & AI" />
+    <meta
+      property="og:description"
+      content="Computer Science at NTU. Projects, experience, education and writing across software, AI and quantitative finance."
+    />
+    <meta property="og:url" content="/" />
+    <meta property="og:image" content="/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Nikhil Madeti — Software, finance & AI" />
+    <meta
+      name="twitter:description"
+      content="Computer Science at NTU. Projects, experience, education and writing across software, AI and quantitative finance."
+    />
+    <meta name="twitter:image" content="/og.png" />
+
+    <title>Nikhil Madeti</title>
+
+    <!-- Apply the saved theme before paint to avoid a flash of the wrong colours. -->
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('portfolio-theme');
+          var theme =
+            stored === 'light' || stored === 'dark'
+              ? stored
+              : window.matchMedia('(prefers-color-scheme: light)').matches
+              ? 'light'
+              : 'dark';
+          document.documentElement.setAttribute('data-theme', theme);
+        } catch (e) {}
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

@@ -1,20 +1,77 @@
 .navbar ul {
   list-style: none;
   display: flex;
+  gap: var(--space-5);
   margin: 0;
   padding: 0;
 }
 
-.navbar li {
-  margin: 0 1rem;
+.navbar a {
+  position: relative;
+  /* Inline-flex so a two-word label wraps inside its own box, aligned under
+     the label rather than hanging back under the index. */
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.4em;
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.25rem 0;
+  transition: color var(--dur-state) var(--ease-out);
 }
 
-.navbar a {
-  color: #e0e0e0;
-  text-decoration: none;
-  transition: color 0.2s ease-in-out;
+.navbar a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 1px;
+  background-color: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform var(--dur-state) var(--ease-out);
 }
 
 .navbar a:hover {
-  color: #ffffff;
+  color: var(--color-text);
+}
+
+.navbar a:hover::after {
+  transform: scaleX(1);
+}
+
+.navbar a.is-active {
+  color: var(--color-accent);
+}
+
+.navbar a.is-active::after {
+  transform: scaleX(1);
+}
+
+.nav-index {
+  flex: 0 0 auto;
+  color: var(--color-text-muted);
+  font-size: 0.62rem;
+  /* `vertical-align` has no effect on a flex item, so the superscript lift is
+     done with a relative offset instead. */
+  position: relative;
+  top: -0.45em;
+}
+
+.navbar a.is-active .nav-index {
+  color: var(--color-accent);
+}
+
+.navbar--mobile ul {
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.navbar--mobile a {
+  font-size: 0.95rem;
 }

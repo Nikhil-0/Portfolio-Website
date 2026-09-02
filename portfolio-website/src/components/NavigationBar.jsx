@@ -1,16 +1,27 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import { navLinks } from '../data/nav';
 import '../styles/NavigationBar.css';
 
-export default function Navbar() {
+export default function NavigationBar({ id, className = '', onNavigate }) {
   return (
-    <nav className="navbar">
+    <nav id={id} className={`navbar ${className}`.trim()} aria-label="Primary">
       <ul>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/projects">Projects & Experience</Link></li>
-        <li><Link to="/education">Education</Link></li>
-        <li><Link to="/holistic-development">Holistic Development</Link></li>
-        <li><Link to="/blog">Blog</Link></li>
+        {navLinks.map((link, i) => (
+          <li key={link.to}>
+            <NavLink
+              to={link.to}
+              end={link.to === '/'}
+              onClick={onNavigate}
+              className={({ isActive }) => (isActive ? 'is-active' : undefined)}
+            >
+              <span className="nav-index" aria-hidden="true">
+                {String(i + 1).padStart(2, '0')}
+              </span>
+              <span className="nav-label">{link.label}</span>
+            </NavLink>
+          </li>
+        ))}
       </ul>
     </nav>
   );

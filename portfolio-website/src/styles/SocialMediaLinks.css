@@ -1,10 +1,43 @@
+.social-media-links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
 .social-media-links a {
-  margin-left: 1rem;
-  font-size: 1.5rem;
-  color: #e0e0e0;
-  transition: color 0.2s ease-in-out;
+  font-size: 1.35rem;
+  color: var(--color-text-muted);
+  display: inline-flex;
+  /* Without both axes the icon stretches and sits off-centre once the footer
+     gives these links a fixed 36px box. */
+  align-items: center;
+  justify-content: center;
+  transition: color var(--dur-state), transform var(--dur-state);
 }
 
 .social-media-links a:hover {
-  color: #ffffff;
+  color: var(--color-accent);
+  transform: translateY(-2px);
+}
+
+/* Footer context: icons render as square instrument buttons and never bounce
+   on hover — the footer is a status block, not a call to action. Scoped
+   under .site-footer so the header's SocialMediaLinks usage is unaffected. */
+.site-footer .social-media-links {
+  gap: var(--space-3);
+}
+
+.site-footer .social-media-links a {
+  width: 36px;
+  height: 36px;
+  justify-content: center;
+  font-size: 1.1rem;
+  border: 1px solid var(--rule);
+  transition: border-color var(--dur-state), color var(--dur-state);
+}
+
+.site-footer .social-media-links a:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  transform: none;
 }

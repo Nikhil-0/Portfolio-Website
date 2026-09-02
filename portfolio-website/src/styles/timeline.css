@@ -1,0 +1,67 @@
+/* Timeline used for experience and education — a mono index/period rail on
+   the left, each row separated from the next by a hairline top rule, and
+   content on the right. */
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+}
+
+.timeline__item {
+  display: grid;
+  grid-template-columns: 9rem minmax(0, 1fr);
+  gap: var(--space-6);
+  padding: var(--space-6) 0;
+  border-top: 1px solid var(--rule);
+}
+
+.timeline__rail {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--color-text-muted);
+  text-align: right;
+  padding-top: 0.15rem;
+}
+
+.timeline__body {
+  margin: 0;
+}
+
+.timeline__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 2.2vw, 1.45rem);
+  color: var(--color-text);
+}
+
+.timeline__org {
+  margin: 0.1rem 0 var(--space-3);
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+}
+
+.timeline__body p {
+  max-width: var(--measure);
+  margin: 0 0 var(--space-3);
+}
+
+.timeline__body > *:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 720px) {
+  .timeline__item {
+    grid-template-columns: 1fr;
+    gap: var(--space-2);
+  }
+
+  .timeline__rail {
+    text-align: left;
+    padding-top: 0;
+  }
+}

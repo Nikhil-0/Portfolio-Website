@@ -1,37 +1,44 @@
 import React from 'react';
-import TKSS from '../assets/Tanjong_Katong_Secondary_School_crest.png';
-import TJC from '../assets/TJC_Logo.avif';
-import NTU from '../assets/NTU_Logo.webp';
+import SectionHeading from './SectionHeading';
+import Reveal from './Reveal';
+import { education } from '../data/education';
+import '../styles/timeline.css';
 import '../styles/Education.css';
 
 export default function Education() {
   return (
-    <section className="education-section">
-      <h2>Education</h2>
-
-      <div className="education-entry">
-        <img src={TKSS} className="school-logo" />
-        <div className="education-details">
-          <h3>Tanjong Katong Secondary School</h3>
-          <p>Completed O-Level examination with a score of 9 points.</p>
+    <div className="page">
+      <section className="section">
+        <Reveal>
+          <SectionHeading>Education</SectionHeading>
+        </Reveal>
+        <div className="timeline">
+          {education.map((item, i) => (
+            <Reveal className="timeline__item" key={item.school} index={i}>
+              <div className="timeline__rail">
+                <span className="index-label">{String(i + 1).padStart(2, '0')}</span>
+                <span className="instrument">{item.period}</span>
+              </div>
+              <div className="timeline__body">
+                <div className="education-card__head">
+                  <span className="education-card__frame">
+                    <img
+                      src={item.logo}
+                      alt=""
+                      className="education-card__logo"
+                      width="44"
+                      height="44"
+                      loading="lazy"
+                    />
+                  </span>
+                  <h3 className="timeline__title">{item.school}</h3>
+                </div>
+                <p className="prose">{item.detail}</p>
+              </div>
+            </Reveal>
+          ))}
         </div>
-      </div>
-
-      <div className="education-entry">
-        <img src={TJC} className="school-logo" />
-        <div className="education-details">
-          <h3>Temasek Junior College</h3>
-          <p>Completed A-Level examination with a Rank Point (RP) of 83.75.</p>
-        </div>
-      </div>
-
-      <div className="education-entry">
-        <img src={NTU} className="school-logo" />
-        <div className="education-details">
-          <h3>Nanyang Technological University (NTU)</h3>
-          <p>I am currently pursuing a Bachelor of Computing in Computer Science. I am expected to graduate in 2028.</p>
-        </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 }

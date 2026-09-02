@@ -1,0 +1,65 @@
+.panel {
+  --bracket: 14px;
+  --bracket-weight: 1px;
+  --bracket-color: var(--rule-strong);
+
+  position: relative;
+  padding: var(--space-5);
+  background-color: var(--color-surface);
+  isolation: isolate;
+}
+
+/* The bracket set lives on an overlay so it can be transformed independently
+   of the panel's content. Scaling the overlay pushes the corners outward. */
+.panel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    linear-gradient(var(--bracket-color) 0 0),
+    linear-gradient(var(--bracket-color) 0 0),
+    linear-gradient(var(--bracket-color) 0 0),
+    linear-gradient(var(--bracket-color) 0 0),
+    linear-gradient(var(--bracket-color) 0 0),
+    linear-gradient(var(--bracket-color) 0 0),
+    linear-gradient(var(--bracket-color) 0 0),
+    linear-gradient(var(--bracket-color) 0 0);
+  background-repeat: no-repeat;
+  background-size:
+    var(--bracket) var(--bracket-weight),
+    var(--bracket-weight) var(--bracket),
+    var(--bracket) var(--bracket-weight),
+    var(--bracket-weight) var(--bracket),
+    var(--bracket) var(--bracket-weight),
+    var(--bracket-weight) var(--bracket),
+    var(--bracket) var(--bracket-weight),
+    var(--bracket-weight) var(--bracket);
+  background-position:
+    left top, left top,
+    right top, right top,
+    left bottom, left bottom,
+    right bottom, right bottom;
+  transition: transform var(--dur-state) var(--ease-out);
+}
+
+.panel--interactive {
+  transition: transform var(--dur-state) var(--ease-out);
+}
+
+.panel--interactive:hover,
+.panel--interactive:focus-within {
+  --bracket-color: var(--color-accent);
+  transform: translateY(-2px);
+}
+
+.panel--interactive:hover::before,
+.panel--interactive:focus-within::before {
+  transform: scale(1.012);
+}
+
+.panel--interactive:active {
+  transform: scale(0.99);
+  transition-duration: 120ms;
+}

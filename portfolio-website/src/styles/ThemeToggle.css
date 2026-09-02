@@ -1,0 +1,44 @@
+.theme-toggle {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 1px solid var(--rule);
+  background: none;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: border-color var(--dur-state), color var(--dur-state);
+}
+
+.theme-toggle:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+/* The outgoing snapshot stays put while the incoming one is clipped open from
+   the toggle, so the new theme reads as spreading rather than cross-fading. */
+::view-transition-old(root) {
+  animation: none;
+  z-index: 0;
+}
+
+::view-transition-new(root) {
+  animation: theme-reveal 420ms var(--ease-out);
+  z-index: 1;
+}
+
+@keyframes theme-reveal {
+  from {
+    clip-path: circle(0 at var(--vt-x, 50%) var(--vt-y, 50%));
+  }
+  to {
+    clip-path: circle(150vmax at var(--vt-x, 50%) var(--vt-y, 50%));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-new(root) {
+    animation: none;
+  }
+}

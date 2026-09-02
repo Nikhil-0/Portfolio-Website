@@ -1,24 +1,190 @@
 .site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
   width: 100%;
-  padding: 1rem 2rem;
-  background-color: #161616;
-  border-bottom: 1px solid #555;
-  box-sizing: border-box;
-  display: flex;
-  justify-content: center;
+  padding-block: var(--space-4);
+  background-color: color-mix(in srgb, var(--color-bg) 88%, transparent);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--rule);
+  /* Discrete, one-shot state change on a single element — narrow exception
+     to the "never animate padding" rule (see plan). box-shadow is swapped
+     instantly below, never transitioned. */
+  transition: padding-block var(--dur-state) var(--ease-out),
+    background-color var(--dur-state) var(--ease-out);
+}
+
+.site-header--condensed {
+  padding-block: var(--space-2);
+  box-shadow: var(--shadow-sm);
 }
 
 .header-content {
   width: 100%;
-  max-width: 1200px;
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding-inline: var(--space-5);
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  gap: var(--space-4);
+}
+
+.site-title {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  line-height: 1.15;
 }
 
 .site-title a {
-  text-decoration: none;
-  color: #e0e0e0;
-  font-weight: bold;
-  font-size: 1.5rem;
+  color: var(--color-text);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  transition: color var(--dur-state) var(--ease-out);
+}
+
+.site-title a:hover {
+  color: var(--color-accent);
+}
+
+.site-title__role {
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.header-actions {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.live-clock {
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.menu-button {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  font-size: 1.4rem;
+  color: var(--color-text);
+  background: transparent;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: border-color var(--dur-state) var(--ease-out),
+    color var(--dur-state) var(--ease-out);
+}
+
+.menu-button:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+/* Scroll-progress rule: a 2px bar pinned to the header's bottom edge, filled
+   left-to-right as the page scrolls. Driven by a Motion scaleX bound to
+   scrollYProgress, so it needs no keyframes of its own. */
+.site-header__progress {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2px;
+  background-color: var(--color-accent);
+  transform-origin: left center;
+  transform: scaleX(0);
+}
+
+/* --------------------------------------------------------------------------
+   Mobile menu (portaled to <body>, shown below 860px)
+   -------------------------------------------------------------------------- */
+
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+}
+
+.mobile-menu__backdrop {
+  position: absolute;
+  inset: 0;
+  background-color: var(--color-scrim);
+  backdrop-filter: blur(4px);
+  animation: mobile-menu-fade 160ms ease;
+}
+
+.mobile-menu__panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  padding: var(--space-4) var(--space-5) var(--space-6);
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--rule);
+  border-left: 1px solid var(--rule);
+  box-shadow: var(--shadow-md);
+  animation: mobile-menu-in 200ms ease;
+}
+
+.mobile-menu__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mobile-menu__top .menu-button {
+  display: inline-flex;
+}
+
+@keyframes mobile-menu-in {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes mobile-menu-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 860px) {
+  .navbar--desktop,
+  .social-media-links--desktop {
+    display: none;
+  }
+
+  .header-content > .menu-button {
+    display: inline-flex;
+  }
+}
+
+@media (min-width: 861px) {
+  .mobile-menu {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .live-clock {
+    display: none;
+  }
 }

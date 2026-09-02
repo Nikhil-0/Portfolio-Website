@@ -1,0 +1,39 @@
+.filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  border: 0;
+  margin: 0 0 var(--space-5);
+  padding: 0;
+}
+
+.filter-chip {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.7rem;
+  border: 1px solid var(--rule);
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: border-color var(--dur-state), color var(--dur-state),
+    background-color var(--dur-state);
+}
+
+.filter-chip:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent-strong);
+}
+
+.filter-chip--on {
+  border-color: var(--color-accent);
+  background-color: var(--color-accent);
+  color: var(--color-accent-contrast);
+}
+
+/* The native input is visually hidden, so the focus ring has to be drawn
+   on the label instead or keyboard users lose the selection outline. */
+.filter-chip:has(:focus-visible) {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}

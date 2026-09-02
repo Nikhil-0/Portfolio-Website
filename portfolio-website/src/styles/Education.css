@@ -1,34 +1,46 @@
-.education-section h2 {
-  text-align: center;
-  margin-bottom: 2rem;
-  font-size: 2rem;
-}
-
-.education-entry {
+.education-card__head {
   display: flex;
   align-items: center;
-  background-color: #22272d;
-  padding: 1.5rem;
-  border-radius: 8px;
-  margin-bottom: 1.5rem;
-  border: 1px solid #555;
+  gap: var(--space-4);
+  margin-bottom: var(--space-3);
 }
 
-.school-logo {
-  width: 100px;
-  height: 100px;
-  object-fit: contain;
-  margin-right: 1.5rem;
+/* Bracket-framed logo cell: two corner marks rather than a full border, so it
+   matches the hero frame without competing with the logo inside it. */
+.education-card__frame {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
   flex-shrink: 0;
+  background-color: var(--color-surface-2);
 }
 
-.education-details h3 {
-  margin-top: 0;
-  margin-bottom: 0.5rem;
-  color: #0cb9e9;
+.education-card__frame::before,
+.education-card__frame::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-color: var(--rule-strong);
+  border-style: solid;
 }
 
-.education-details p {
-  margin: 0;
-  color: #e0e0e0;
+.education-card__frame::before {
+  top: 0;
+  left: 0;
+  border-width: 1px 0 0 1px;
+}
+
+.education-card__frame::after {
+  bottom: 0;
+  right: 0;
+  border-width: 0 1px 1px 0;
+}
+
+.education-card__logo {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
 }
